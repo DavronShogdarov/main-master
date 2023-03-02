@@ -1,0 +1,36 @@
+<div class="mainText">
+  Savollar Ro'yxati
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Matn</th>
+      <th scope="col">Javob</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let q of questions">
+      <td>{{q?.id}}</td>
+      <td [innerHTML]="q.title"></td>
+      <td>{{q?.answer}}</td>
+      <td>{{q?.questionLevel?.level}}</td>
+      <td>
+        <button mat-mini-fab color="warn" mat-button (click)="ochirish(q)">
+          <mat-icon class="mat-18">delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <mat-paginator  (page)="loadQuestions()" #paginator [length]="length" [pageSize]="5" [pageSizeOptions]="[5, 7, 10, 12]"
+  aria-label="Select page">
+</mat-paginator>
+
+
+
+
