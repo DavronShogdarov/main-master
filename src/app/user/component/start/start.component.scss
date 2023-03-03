@@ -27,6 +27,17 @@
     border-color: #ff0000;
   }
 }
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+}
+@media (min-width: 32rem) {
+  .btns {
+    flex-direction: row;
+  }
+}
 
 @media print {
   button {

@@ -6,7 +6,6 @@ import { UserComponent } from './user.component';
 import { material_imports } from '../shared/material-imports';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './component/test/test.component';
-import { InstructionsComponent } from './component/instructions/instructions.component';
 import { StartComponent } from './component/start/start.component';
 // import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
 
@@ -15,7 +14,6 @@ import { StartComponent } from './component/start/start.component';
   declarations: [
     UserComponent,
     TestComponent,
-    InstructionsComponent,
     StartComponent,
   ],
   imports: [

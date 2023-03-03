@@ -64,12 +64,10 @@
 
               <br /><br /><br />
 
-              <div class="container text-center">
+              <div class="btns">
                 <button [disabled]="currentQuestion >= questionListLength" (click)="formSubmit()" mat-raised-button
                   color="primary">Javobni kiritish</button>
-                &nbsp;
                 <button (click)="submitQuiz()" mat-raised-button color="warn">Testni tugatish</button>
-                &nbsp;
                 <!-- <button class="btn" (click)="nextQuestion()">Nex</button> -->
                 <button [disabled]="currentQuestion >= questionListLength - 1" (click)="nextQuestion()" type="button"
                   class="btn btn-warning" style="color: white;">Keyingi Savol</button>
