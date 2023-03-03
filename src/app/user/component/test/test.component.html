@@ -9,10 +9,12 @@
           <h1>
             MENTAL ARIFMETIKA online olimpiadasi. O'zingizga mos guruhni <br> tanlang va bilimingizni tekshirib ko'ring!
           </h1>
+          <div class="btn">
+            <button style="width:150px; background-color: #FFD4B2;" [routerLink]="'/home'" mat-raised-button>Bosh
+              sahifa</button>
+          </div>
         </div>
-        <!-- <form *ngIf="authStatus"> -->
-
-        <!-- </form> -->
+        <br>
         <br>
         <br>
         <br>
@@ -24,7 +26,8 @@
           <mat-card>
             <mat-card-content><span style="font-size:25px;"> {{l?.level}} </span> <br> {{l?.info}} </mat-card-content>
             <mat-card-actions>
-              <button id="animation" class="button-three" mat-raised-button color="primary" (click)="startQuiz(l?.level)">Testni
+              <button id="animation" class="button-three" mat-raised-button color="primary"
+                (click)="startQuiz(l?.level)">Testni
                 boshlash</button>
             </mat-card-actions>
           </mat-card>
@@ -68,26 +71,26 @@
       <ul class="contact">
         <li style="text-align: left;">
           <p><i class="fa fa-map-marker fa-3x"></i></p>
-          <p><strong>Location</strong>
+          <p><strong>Manzil</strong>
             <br> Qarshi shahar, O'zbekiston ko'chasi 47-uy
           </p>
         </li>
         <li style="text-align: left;">
           <p><i class="fa fa-phone fa-3x"></i></p>
-          <p><strong>Phone</strong>
+          <p><strong>Telefon</strong>
             <br> +998886785888 | +998943375155
           </p>
         </li>
         <li style="text-align: left;">
           <p><i class="fa fa-envelope fa-3x"></i></p>
-          <p><strong>Email</strong>
+          <p><strong>Elektron Pochta</strong>
             <br> javlonqochqorov73@gmail.com
           </p>
         </li>
       </ul>
     </div>
 
-    <p>©2022 Mutaalim | All Rights Reserved</p>
+    <p>©2023 Mutaallim | Barcha huquqlar himoyalangan</p>
   </footer>
 </div>
 

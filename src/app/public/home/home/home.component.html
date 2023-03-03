@@ -11,13 +11,12 @@
                 <div class="block-avatar block-avatar-history">
                   <div><a href="/" class="fai fa-chevron-left avatar-history is-left has-p-2 active is-hide"
                       style="padding-left: 0px !important; color: #2A2A72;"></a></div> <a href="/">
-                    <div class="has-text-centered"><img src="./91e9b4.jpg" alt="mental-arifmetika-qarshi"
+                    <div class="has-text-centered"><img id="logo-img" src="./91e9b4.jpg" alt="mental-arifmetika-qarshi"
                         class="profile-avatar profile-avatar-125"></div>
                   </a>
                   <div><i class="fai fa-chevron-right avatar-history has-p-2"
                       style="padding-right: 0px !important; visibility: hidden;"></i></div>
                 </div>
-                <div class="has-text-centered text-avatar">mental-arifmetika-qarshi</div>
               </div>
             </div>
           </div>
@@ -37,17 +36,17 @@
               <li>
                 <form *ngIf="!authStatus">
                   <div class="btn btn-primary mx-3" [routerLink]="['/auth/login']">
-                    <a style="text-decoration: none;">Log in</a>
+                    <a style="text-decoration: none;">Kirish</a>
                   </div>
                 </form>
 
                 <form *ngIf="!authStatus">
                   <div class="btn btn-primary" [routerLink]="['/auth/signup']">
-                    <a style="text-decoration: none;">Sign up</a>
+                    <a style="text-decoration: none;">Ro'yxatdan o'tish</a>
                   </div>
                 </form>
 
-                <form *ngIf="authStatus && authStatus">
+                <form *ngIf="authStatus && adminStatus">
                   <div class="btn btn-primary" [routerLink]="['/admin']">
                     <a style="text-decoration: none;">Admin</a>
                   </div>
@@ -190,4 +189,4 @@
         </div>
       </div>
     </div>
-</div>
+  </div>

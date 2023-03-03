@@ -134,7 +134,7 @@ export class StartComponent implements OnInit {
 
     this.resultsService.create(result).subscribe(
       (data: any) => {
-        Swal.fire('Success', 'Test muvaffaqiyatli tugatildi', 'success');
+        Swal.fire('Muvaffaqiyatli', 'Test muvaffaqiyatli tugatildi', 'success');
         console.log(result);
 
       },

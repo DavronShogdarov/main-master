@@ -28,19 +28,13 @@ export class HomeComponent implements OnInit {
       ? (this.userStatus = true)
       : (this.userStatus = false);
 
-
-    this.preventBackButton();
   }
 
-  preventBackButton() {
-    history.pushState(null, location.href);
-    this.locationSt.onPopState(() => {
-      history.pushState(null, location.href)
-    })
-  }
+
 
   logout() {
     this.authService.logout();
+    this.authStatus = false;
   }
 
 

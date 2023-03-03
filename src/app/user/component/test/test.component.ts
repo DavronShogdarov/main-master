@@ -50,6 +50,7 @@ export class TestComponent implements OnInit {
     history.pushState(null, location.href);
     this.locationSt.onPopState(() => {
       history.pushState(null, location.href)
+      // this.router.navigate(['/home']);
     })
   }
 
@@ -85,7 +86,7 @@ export class TestComponent implements OnInit {
     Swal.fire({
       title: 'Testni boshlashni istaysizmi?',
       showCancelButton: true,
-      confirmButtonText: 'Start',
+      confirmButtonText: 'Boshlash',
       icon: 'info',
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
@@ -96,5 +97,6 @@ export class TestComponent implements OnInit {
       }
     })
   }
+
 
 }

@@ -113,7 +113,7 @@ export class AuthService {
     this.authListener.next(false);
     localStorage.removeItem(this.TOKEN_KEY);
     sessionStorage.removeItem(this.TOKEN_KEY);
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/home']);
   }
 
 }
