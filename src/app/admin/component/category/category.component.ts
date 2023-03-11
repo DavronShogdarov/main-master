@@ -111,7 +111,7 @@ export class CategoryComponent implements OnInit {
 
   }
 
-  tahrir(level: any) {
+  tahrirlash(level: any) {
     this.tahrirRejim = true;
     this.questionLevelForm.reset(level);
     this.formOchiq = true;
@@ -122,6 +122,7 @@ export class CategoryComponent implements OnInit {
     this.tahrirRejim = false;
     this.formOchiq = false;
   }
+
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }

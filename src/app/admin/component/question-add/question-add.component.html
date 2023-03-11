@@ -3,6 +3,10 @@
 </div>
 
 <form [formGroup]="questionForm" (ngSubmit)="saqlash()">
+  <mat-form-field *ngIf='tahrirRejim' appearance="outline">
+    <mat-label>ID</mat-label>
+    <input formControlName="id" readonly matInput placeholder="ID" autocomplete="off">
+  </mat-form-field>
 
   <div class="formText">Savol sahifasi</div>
   <ckeditor style="margin-left: 200px;" class="d-flex align-items-center justify-content-center" [editor]="Editor"

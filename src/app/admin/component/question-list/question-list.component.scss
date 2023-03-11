@@ -4,8 +4,7 @@
   margin-top: 40px;
   margin-left: 600px;
 }
-table
-{
+table {
   width: 800px;
   margin-top: 50px;
   margin-left: 400px;
@@ -16,8 +15,14 @@ th{
 td{
   padding: 20px;
 }
-
 mat-paginator{
   width: 800px;
   margin-left: 400px;
+}
+mat-form-field{
+  width: 100%;
+}
+.modal-header{
+  background-color: #F7941E;
+  color: #fff;
 }

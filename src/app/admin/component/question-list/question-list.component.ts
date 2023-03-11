@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -9,6 +9,8 @@ import { Question } from 'src/app/model/question';
 import { QuestionService } from 'src/app/service/question.service';
 import { QuestionLevelService } from 'src/app/service/questionLevel.service';
 import { DeleteDialog } from 'src/app/shared/delete-dialog.component';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-question-list',
@@ -16,12 +18,13 @@ import { DeleteDialog } from 'src/app/shared/delete-dialog.component';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-
+  public Editor: any = ClassicEditor;
   questionForm!: FormGroup;
   questions: any[] = [];
   questionLevels!: any[];
   tahrirRejim = false;
   formOchiq = false;
+  modalRef!: BsModalRef;
 
   surovBajarilmoqda = false;
 
@@ -34,6 +37,7 @@ export class QuestionListComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private fb: FormBuilder,
+    private modalService: BsModalService,
     private questionService: QuestionService,
     private questionLevelService: QuestionLevelService,
     private snakBar: MatSnackBar,
@@ -134,4 +138,7 @@ export class QuestionListComponent implements OnInit {
     this.formOchiq = false;
   }
 
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 }

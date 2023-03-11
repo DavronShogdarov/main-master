@@ -2,6 +2,51 @@
   Savollar Ro'yxati
 </div>
 
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title">Savolni tahrirlash</h4>
+  </div>
+
+  <div class="modal-body ">
+    <form [formGroup]="questionForm" (ngSubmit)="saqlash()">
+
+      <mat-form-field *ngIf='tahrirRejim' appearance="outline">
+        <mat-label>ID</mat-label>
+        <input formControlName="id" readonly matInput placeholder="ID" autocomplete="off">
+      </mat-form-field>
+
+      <div>Savol sahifasi</div>
+      <ckeditor style="margin-left: 160px;"[editor]="Editor"
+        formControlName="title">
+      </ckeditor>
+      <br>
+      <div>Savol javobi</div>
+      <mat-form-field appearance="outline">
+        <mat-label>Javob</mat-label>
+        <textarea formControlName="answer" matInput Answer="Javob...">
+              </textarea>
+      </mat-form-field>
+      <br>
+      <div>Savol categoriyasi</div>
+      <mat-form-field appearance="outline">
+        <select matNativeControl formControlName="questionLevel" placeholder="Categorylar . . .">
+          <option *ngFor="let l of questionLevels" [value]="l.id">{{l?.level}}</option>
+        </select>
+      </mat-form-field>
+      <div>
+        <button [disabled]="questionForm.invalid || surovBajarilmoqda" mat-raised-button color="primary" type="submit">
+          <mat-spinner *ngIf="surovBajarilmoqda" diameter="20" color="warn"></mat-spinner>
+          Saqlash
+        </button>
+        &nbsp;
+        <button mat-raised-button color="accent" type="reset" (click)="tozalash()">
+          Bekor qilish</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -19,6 +64,10 @@
       <td>{{q?.answer}}</td>
       <td>{{q?.questionLevel?.level}}</td>
       <td>
+        <button mat-mini-fab color="primary" (click)="tahrirlash(q)" (click)="openModal(template)">
+          <mat-icon diametr=5>edit</mat-icon>
+        </button>
+        &nbsp;
         <button mat-mini-fab color="warn" mat-button (click)="ochirish(q)">
           <mat-icon class="mat-18">delete</mat-icon>
         </button>
@@ -27,10 +76,6 @@
   </tbody>
 </table>
 
-  <mat-paginator  (page)="loadQuestions()" #paginator [length]="length" [pageSize]="5" [pageSizeOptions]="[5, 7, 10, 12]"
+<mat-paginator (page)="loadQuestions()" #paginator [length]="length" [pageSize]="5" [pageSizeOptions]="[5, 7, 10, 12]"
   aria-label="Select page">
 </mat-paginator>
-
-
-
-

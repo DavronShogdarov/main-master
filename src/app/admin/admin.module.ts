@@ -27,7 +27,7 @@ import { ResultsComponent } from './component/results/results.component';
     QuestionListComponent,
     BlogComponent,
     UsersComponent,
-    ResultsComponent
+    ResultsComponent,
   ],
   imports: [
     CommonModule,
