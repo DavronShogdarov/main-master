@@ -1,4 +1,4 @@
-<div class="mainText">
+<!-- <div class="mainText">
   Natijalar
 </div>
 <div class="main">
@@ -32,4 +32,19 @@
   <mat-paginator (page)="loadResults()" #paginator [length]="length" [pageSize]="5" [pageSizeOptions]="[5, 7, 10, 12]"
     aria-label="Select page">
   </mat-paginator>
-</div>
+</div> -->
+<mat-card class="mt10" *ngFor="let l of questionLevels">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      {{l?.level}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{l?.info}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-flat-button color="warn" [routerLink]="'/admin/view-results/' + l.id">Natijalar</button>
+    <button mat-stroked-button color="warn">Timer: {{l?.timer}}</button>
+  </mat-card-actions>
+</mat-card>

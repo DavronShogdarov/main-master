@@ -14,6 +14,7 @@ import { QuestionListComponent } from './component/question-list/question-list.c
 import { BlogComponent } from './component/blog/blog.component';
 import { UsersComponent } from './component/users/users.component';
 import { ResultsComponent } from './component/results/results.component';
+import { ViewCategoryResultsComponent } from './component/view-category-results/view-category-results.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ResultsComponent } from './component/results/results.component';
     BlogComponent,
     UsersComponent,
     ResultsComponent,
+    ViewCategoryResultsComponent,
   ],
   imports: [
     CommonModule,

@@ -9,6 +9,7 @@ import { QuestionListComponent } from './component/question-list/question-list.c
 import { QuestionComponent } from './component/question/question.component';
 import { ResultsComponent } from './component/results/results.component';
 import { UsersComponent } from './component/users/users.component';
+import { ViewCategoryResultsComponent } from './component/view-category-results/view-category-results.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path:'results',
         component: ResultsComponent
+      },
+      {
+        path:'view-results/:id',
+        component: ViewCategoryResultsComponent
       },
     ]
   },

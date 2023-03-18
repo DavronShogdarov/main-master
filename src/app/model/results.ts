@@ -5,7 +5,7 @@ export interface Results {
   id: number,
   point: string,
   score: number,
-  attemptedQuestions: number, 
+  attemptedQuestions: number,
   date: Date,
   user: User,
   name: string,

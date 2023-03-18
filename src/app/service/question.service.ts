@@ -48,9 +48,6 @@ export class QuestionService {
     return this.selectedGroupTests$$.asObservable();
   }
 
-
-
-
   getAll(params: any): Observable<Page> {
     return this.http.get<Page>(this.api + "/all", {
       params: params

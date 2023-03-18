@@ -59,8 +59,6 @@ export class StartComponent implements OnInit {
       console.log(this.questionList);
 
       this.counter = this.questionList[0].questionLevel.timer;
-      console.log(this.counter);
-
     });
   }
 

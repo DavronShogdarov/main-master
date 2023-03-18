@@ -25,13 +25,10 @@ export class TestComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthService,
     private route: ActivatedRoute,
     private locationSt: LocationStrategy,
     private questionLevelservice: QuestionLevelService,
-    private questionService: QuestionService,
-    private snakBar: MatSnackBar,
-    private dialog: MatDialog) { }
+    private questionService: QuestionService,) { }
 
   ngOnInit(): void {
     this.loadQuestionLevels();

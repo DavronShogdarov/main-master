@@ -1,4 +1,4 @@
- .mainText{
+ /* .mainText{
   font-weight: 700;
   font-size: 20px;
   margin-top: 40px;
@@ -15,4 +15,15 @@ td{
   width: 100%;
   margin-top: 50px;
   margin-left: 300px;
+} */
+mat-card{
+  width: 800px;
+  margin-left: 40px;
+}
+.mt10{
+  margin-top: 10px !important;
+}
+.example-header-image{
+  background-image: url("../../../../assets/test.png");
+  background-size: cover;
 }

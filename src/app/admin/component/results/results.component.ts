@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionLevelService } from 'src/app/service/questionLevel.service';
 import { ResultsService } from 'src/app/service/results.service';
 import { UserService } from 'src/app/service/user.service';
@@ -21,7 +21,6 @@ export class ResultsComponent implements OnInit {
   results: any;
 
   questionLevels!: any[];
-  users!: any[];
 
 
   length = 100;
@@ -29,31 +28,24 @@ export class ResultsComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private fb: FormBuilder,
-    private _results: ResultsService,
-    private _route: ActivatedRoute,
-    private _user: UserService,
-    private _questionLevel: QuestionLevelService,
-    private _snack: MatSnackBar
+    private resultsService: ResultsService,
+    private router: Router,
+    private questionLevelService: QuestionLevelService,
   ) { }
 
   ngAfterViewInit(): void {
 
-    this.loadResults();
   }
 
   ngOnInit(): void {
+    this.loadQuestionLevels();
 
-    this._user.getAll('').subscribe(data => {
-      this.users = data.content;
+    this.resultsService.getAll('').subscribe(data => {
+      this.results = data.content;
     });
-
-    this._questionLevel.getAll('').subscribe(data => {
-      this.questionLevels = data.content;
-    })
   }
 
-  loadResults(key?: any) {
+  loadQuestionLevels(key?: any) {
     if (!key) {
       key = '';
     } else {
@@ -64,17 +56,35 @@ export class ResultsComponent implements OnInit {
 
 
     }
-    this._results.getAll({
+    this.questionLevelService.getAll({
       key: key,
-      page: this.paginator.pageIndex,
-      size: this.paginator.pageSize,
+      // page: this.paginator.pageIndex,
+      // size: this.paginator.pageSize,
       sort: 'id'
     }).subscribe(royxat => {
 
       console.log(royxat);
-      this.results = royxat.content;
-      console.log(this.results);
-      this.length = royxat.totalElements;
+      this.questionLevels = royxat.content;
+
+      // this.length = royxat.totalElements;
     });
   }
+
+  seeResults() {
+
+    Swal.fire({
+      title: "Natijalarni ko'rmoqchimisiz?",
+      showCancelButton: true,
+      confirmButtonText: "Ko'rish",
+      icon: 'info',
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.router.navigate(['/admin/view-results']);
+      } else if (result.isDenied) {
+        Swal.fire("Sahifa o'zgarmadi", '', 'info')
+      }
+    })
+  }
+
 }
